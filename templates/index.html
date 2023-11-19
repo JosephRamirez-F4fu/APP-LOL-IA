@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header>
+    <h2>Banea 10 campeaones, luego selecciona tu rol del equipo de la derecha y luego de la izquierda</h2>
+     <div id="rank-dropdown-container">
+        <label for="rank-dropdown">Selecciona el rango:</label>
+        <select id="rank-dropdown" onchange="selectDivision()">
+            <option value="GOLD">GOLD</option>
+            <option value="PLATINUM">PLATINUM</option>
+            <option value="EMERALD">EMERALD</option>
+            <option value="DIAMOND">DIAMOND</option>
+        </select>
+
+    </div>
+    <div id="tier-dropdown-container">
+        <label for="tier-dropdown">Selecciona la division:</label>
+        <select id="tier-dropdown" onchange="selectTier()">
+            <option value="IV">IV</option>
+            <option value="III">III</option>
+            <option value="II">II</option>
+            <option value="I">I</option>
+
+        </select>
+    </div>
+
+    <div id="gameVersion-dropdown-container">
+        <label for="gameVersion-dropdown">Selecciona la division:</label>
+        <select id="gameVersion-dropdown" onchange="selectGameVersion()">
+            <option value="13.2">13.2</option>
+            <option value="13.19">13.19</option>
+            <option value="13.18">13.18</option>
+            <option value="13.17">13.17</option>
+            <option value="13.16">13.16</option>
+
+        </select>
+    </div>
+
+
+</header>
+<main>
+    <div id="left">
+        <div class="card" id="middle-team-1" onclick="selectRole('middle', 0)">
+            <img src="/static/images/positions/icon-position-middle.png" alt="middle">
+            <div>Mid</div>
+        </div>
+        <div class="card" id="jungle-team-1" onclick="selectRole('jungle', 0)">
+            <img src="/static/images/positions/icon-position-jungle.png" alt="jungle">
+            <div>Jungle</div>
+        </div>
+        <div class="card" id="top-team-1" onclick="selectRole('top', 0)">
+            <img src="/static/images/positions/icon-position-top.png" alt="top">
+            <div>Top</div>
+        </div>
+        <div class="card" id="bottom-team-1" onclick="selectRole('bottom', 0)">
+            <img src="/static/images/positions/icon-position-bottom.png" alt="bottom">
+            <div>Bottom</div>
+        </div>
+        <div class="card" id="utility-team-1" onclick="selectRole('utility', 0)">
+            <img src="/static/images/positions/icon-position-utility.png" alt="utility">
+            <div>Utility</div>
+        </div>
+    </div>
+    <div id="champions"></div>
+    <div id="right">
+        <div class="card" id="middle-team-2" onclick="selectRole('middle', 1)">
+            <img src="/static/images/positions/icon-position-middle.png" alt="middle">
+            <div>Mid</div>
+        </div>
+        <div class="card" id="jungle-team-2" onclick="selectRole('jungle', 1)">
+            <img src="/static/images/positions/icon-position-jungle.png" alt="jungle">
+            <div>Jungle</div>
+        </div>
+        <div class="card" id="top-team-2" onclick="selectRole('top', 1)">
+            <img src="/static/images/positions/icon-position-top.png" alt="top">
+            <div>Top</div>
+        </div>
+        <div class="card" id="bottom-team-2" onclick="selectRole('bottom', 1)">
+            <img src="/static/images/positions/icon-position-bottom.png" alt="bottom">
+            <div>Bottom</div>
+        </div>
+        <div class="card" id="utility-team-2" onclick="selectRole('utility', 1)">
+            <img src="/static/images/positions/icon-position-utility.png" alt="utility">
+            <div>Utility</div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div id="banned-champions-left" class="banned-champions-container"></div>
+    <div id="banned-champions-right" class="banned-champions-container"></div>
+</footer>
+<div id="predict"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

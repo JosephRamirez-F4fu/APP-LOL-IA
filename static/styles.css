@@ -1,0 +1,205 @@
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    min-height: 100vh;
+    margin: 0;
+    background-color: #2f1136;
+
+
+}
+
+header {
+    grid-area: header;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+#left,
+#right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333; /* Azul oscuro */
+    color: white;
+    border: 1px solid #555; /* Gris oscuro */
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+    width: 100px;
+    height: 120px;
+}
+
+.card img {
+    max-width: 100px;
+    height: 100px;
+}
+
+#champions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow: auto;
+    max-height: 600px;
+    justify-content: center;
+    padding: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #333 #555; /* Azul oscuro y gris oscuro para scrollbar */
+    flex: 2;
+}
+
+#champions::-webkit-scrollbar {
+    width: 8px;
+}
+
+#champions::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+.champion-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 16px;
+    transition: border 0.2s ease-in-out;
+}
+
+.champion-container:hover {
+    border: 3px solid #ffd700;
+}
+
+.champion-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.champion-container p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: white;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    flex: 1;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+#banned-champions-left,
+#banned-champions-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.banned-champion {
+    background-color: #333; /* Azul oscuro */
+    color: white;
+    border: 1px solid #555; /* Gris oscuro */
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+    width: 100px;
+    height: 120px;
+}
+
+.banned-champion img {
+    max-width: 100px;
+    height: 100px;
+}
+
+.banned-champion p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: white;
+}
+
+.banned {
+    border: 3px solid #ff0000; /* Rojo al ser baneado */
+}
+
+.team-1-selected {
+    border: 3px solid #00ff00; /* Verde para el equipo 1 */
+}
+.team-2-selected{
+    border: 3px solid #ff8c00; /* Naranja para el equipo 2 */
+}
+.card:hover{
+    border: 3px solid #ffd700;
+}
+
+.card.selected{
+    border: 3px solid #ffd700;
+}
+
+#banned-champions-left,#banned-champions-right{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+#banned-champions-left{
+    justify-content: flex-start;
+}
+
+#banned-champions-right{
+    justify-content: flex-end;
+}
+
+.selected-champion{
+     width: 50px;
+    height: 50px;
+
+}
+
+
+#predict {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 999;
+
+    display: none;
+}
+
+
