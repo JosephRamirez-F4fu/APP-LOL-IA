@@ -40,11 +40,9 @@ async def root(request: Request):
 
 @app.post("/predict")
 async def predict(match: Match):
-
     predict = transform_data_for_model(match)
 
     return {"data": predict}
-
 
 
 def transform_data_for_model(match: Match):
@@ -63,12 +61,6 @@ def transform_data_for_model(match: Match):
         bans_champs_1_id.append(champions_df[champions_df['championName'] == champ]['championId'].values[0])
     for champ in match.bans_champs_2:
         bans_champs_2_id.append(champions_df[champions_df['championName'] == champ]['championId'].values[0])
-    """#tier_id = tier_df[tier_df['tier'] == match.tier]['id'].values[0]
-    division_id = division_df[division_df['division'] == match.division]['id'].values[0]
-
-    level = division_id + tier_id - 2
-    level = math.log1p(level)
-    level = round(level, 4)"""
 
     team_1_champs_dummies = []
     team_2_champs_dummies = []
